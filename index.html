@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>เดนดาว NEVERDIE | BOOKIE</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&family=Playpen+Sans+Thai&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Bootstrap only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #f70164;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: Arial, "Noto Sans Thai", sans-serif;
+    }
+
+    .pink {
+      color: var(--pink);
+    }
+
+    .bg-pink {
+      background: var(--pink);
+    }
+
+    /* Header */
+    .site-header {
+      background: #000;
+      min-height: 72px;
+    }
+
+    .brand {
+      color: var(--pink);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      font-size: 2rem;
+      line-height: 0;
+      vertical-align: -4px;
+    }
+
+    .nav-link {
+      color: #fff !important;
+      font-size: .9rem;
+      padding: .8rem 1rem !important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--pink) !important;
+    }
+
+    /* Hero */
+.hero {
+  min-height: 100vh;
+  background-image: url("images/dd-bg1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-logo {
+  width: min(1100px, 95%);
+  height: auto;
+}
+
+.hero h2 {
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-top: 1rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.hero h2 .em {
+  color: #fff000;
+  font-weight: 800;
+}
+
+    /* Sections */
+    .teaser {
+      background: #555;
+      padding: 30px 0;
+      text-align: center;
+      line-height: 2;
+    }
+
+    .summary {
+      background: #555;
+      padding: 70px 0;
+    }
+
+    .summary h1,
+    .reasons h1 {
+      color: var(--pink);
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .summary p,
+    .reasons p {
+      line-height: 2;
+      text-align: justify;
+    }
+
+    .book-img {
+      width: min(200%, 440px);
+      display: block;
+      margin: auto;
+    }
+
+    .read-btn {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      border-radius: 50px;
+      padding: 15px 42px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .read-btn:hover {
+      background: var(--pink);
+      color: #fff;
+    }
+
+    .reasons {
+      background: #111;
+      padding: 70px 0;
+    }
+
+    /* Quotes */
+    .quotes {
+      background-image: url("images/water.png");
+      background-size: cover;
+      background-position: center;
+      padding: 80px 0;
+      overflow: hidden;
+    }
+
+    .quote-paper {
+      max-width: 480px;
+      min-height: 190px;
+      margin: 0 auto;
+      padding: 55px 55px 35px;
+      color: #222;
+      background: #f4f0df;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
+    .quote-paper::before {
+      content: "";
+      position: absolute;
+      inset: 35px 20px 25px;
+      background: repeating-linear-gradient(to bottom,
+          transparent 0,
+          transparent 31px,
+          rgba(100, 100, 100, .18) 32px);
+      pointer-events: none;
+    }
+
+    .quote-paper p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-img {
+      max-width: 280px;
+      width: 70%;
+      display: block;
+      margin: auto;
+    }
+
+    .quote-row {
+      margin-bottom: 70px;
+    }
+
+    .quote-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .flip {
+      transform: scaleY(-1);
+    }
+  </style>
+
+
+  </style>
+
+
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="brand navbar-brand" href="#home">
+          <span class="brand-mark">✷</span> BOOKIE
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#teaser">Read now</a></li>
+            <li class="nav-item"><a class="nav-link" href="#quotes">Quote</a></li>
+            <li class="nav-item"><a class="nav-link" href="#playlist">Playlist</a></li>
+            <li class="nav-item"><a class="nav-link" href="#footer">About us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+<section id="home" class="hero min-vh-100">
+  <div class="container text-center" data-aos="fade-up" style="color: #000;">
+    <img src="images/dd.png" alt="เดนดาว NEVERDIE" class="hero-logo img-fluid">
+
+    <h2 class="fs-4">
+      เดนดาว NEVERDIE: ถ้าความรักทำให้เรารู้สึกว่า
+      <span class="em ">“เรายังมีชีวิตอยู่”</span>
+      คุณจะกล้าอ่านมันไปไหม?
+      <br>
+      <span class="fs-6 ">จิตจงกล</span>
+    </h2>
+  </div>
+</section>
+    
+
+<!-- SECTION 1 -->
+<section id="teaser" class="teaser py-2">
+  <div class="container px-3 ">
+    บางครั้งคนสองคนไม่ได้เข้ามาเพื่อเปลี่ยนชีวิตกันและกัน
+    แต่อาจเข้ามาเพื่อทำให้เรามองเห็นว่า
+    <span class="fw-bold" style="color:#ffffff;">ชีวิตของเรายังมีความหมายอยู่</span>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section id="summary" class="summary py-3">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-5" data-aos="fade-right">
+        <img src="images/book.png" alt="เดนดาว NEVERDIE book" class="book-img">
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-left">
+        <h1 class="text-center mb-3">เรื่องย่อ</h1>
+
+        <p>
+          ‘น้ำ’ โฮโมเซเปียนส์หนึ่งเดียวในรัศมีร้อยเมตรจากวิวอิมเพรสชั่นนิสม์ท้ายไร่เวิ้งว้าง
+          ผู้พกเอาความเหงาขนาดเท่าจักรวาลไว้ในหัวใจขนาดเท่ากำปั้นเป็นยันต์กันเหงา
+          ริมบึงบัวโมเนต์มีบ้านสองหลัง — สีเขียวมีไว้อาศัย สีชมพูมีไว้หลบซ่อน
+          มันใหญ่พอจะซ่อนทุกสิ่งให้พ้นจากสายตา ยัดเข้าไปได้ทุกอย่างตั้งแต่ลังแป้งปาท่องโก๋เหลือใช้
+          นาฬิกาตาย รถเครื่องเกินจำนวนคนอาศัยเรื่อยไปถึงสองมือของศิลปินภาพเขียน
+          ความฝันที่จะเติบโตนอกบ้านโป่ง ความลับที่ว่าน้ำชอบผู้ชาย และความรักไม่มีวันตาย —
+          never die ที่แปลว่านิรันดร์
+        </p>
+
+        <a class="read-btn mt-3"
+           href="https://www.readawrite.com/a/c1a8beacf81ebfdb49eb1d0a6dbba1ca"
+           target="_blank" rel="noopener">
+          READ NOW
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- SECTION 3 -->
+    <section id="about" class="reasons">
+      <div class="container" data-aos="fade-up">
+        <h1 class="text-center mb-5" data-aos="fade-up">ทำไมถึงควรอ่าน “เดนดาว NEVERDIE”</h1>
+
+        <p>
+          ถ้าคุณกำลังมองหาหนังสือที่ไม่ได้เล่าเพียงเรื่อง “ความรัก” แต่ชวนตั้งคำถามกับ
+          ชีวิต ตัวตน ความฝัน ความเหงา และการเป็นที่ยอมรับ เดนดาว NEVERDIE
+          เป็นหนังสือที่น่าสนใจอย่างมาก จุดเด่นของเรื่องคือการสร้างโลกที่มีบรรยากาศเฉพาะตัว
+          ตั้งแต่ บึงบัว บ้านสีเขียว บ้านสีชมพู ชีวิตในบ้านโป่ง ไปจนถึงความฝันในการเติบโตและการเป็นศิลปิน
+          ทำให้สถานที่ไม่ได้เป็นเพียงฉากประกอบ แต่กลายเป็นส่วนหนึ่งของความทรงจำและความรู้สึกของตัวละคร
+        </p>
+
+        <p>
+          นอกจากนี้ เรื่องยังนำเสนอความสัมพันธ์ของคนสองคนที่ต่างมี “ความไม่สมบูรณ์”
+          ในชีวิต และค่อย ๆ ทำให้ผู้อ่านเห็นว่า ความรักอาจเป็นทั้งพื้นที่ปลอดภัย
+          และพื้นที่ที่ทำให้เราได้เผชิญหน้ากับตัวเอง
+        </p>
+
+        <p>
+          หนังสือเล่มนี้จึงน่าสนใจในฐานะงานอ่านที่สามารถต่อยอดไปสู่การพูดคุยเรื่อง
+          อัตลักษณ์ ความแตกต่างทางสังคม ความสัมพันธ์ในครอบครัว ชนชั้น ความฝันของคนรุ่นใหม่
+          และการค้นหาตัวตน ได้ ไม่ใช่แค่อ่านเพื่อรู้ว่า “สองคนนี้จะรักกันไหม”
+          แล้วจบกันไปเหมือนการบ้านที่มนุษย์ตั้งใจทำตอนตีสอง
+        </p>
+      </div>
+    </section>
+
+
+    <!-- SECTION 4 : QUOTES -->
+    <section id="quotes" class=" py-5"
+      style="background-image: url('images/water.png'); background-size: cover; background-position: center;">
+      <div class="container">
+
+        <!-- Quote 1 : ซ้าย -->
+        <div class="row align-items-center g-5 mb-5">
+
+          <div class="col-sm-12 col-md-8 col-lg-6 position-relative text-center ">
+            <img src="images/paper1.png" alt="Quote 1" class="img-fluid" data-aos="fade-up-right">
+
+            <div class=" position-absolute top-50 start-50 translate-middle w-75 text-dark text-center fs-4  quote-text"
+              data-aos="fade-up-right">
+              “พี่เป็นหัวใจของผมเลยนะเว้ย<br>
+              พี่ทำให้ผมรู้สึกว่าผมเอง<br>ก็มีชีวิตเหมือนกัน”
+            </div>
+
+          </div>
+
+         <!-- คอลัมน์ขวา : รูปดาว -->
+  <div class="col-12 col-md-6 text-center">
+    <img src="images/star.png"
+         alt="Star"
+         class="img-fluid w-75"
+         data-aos="fade-up-left">
+  </div>
+
+          <div class="col-md-6 text-center">
+            <img src=" " alt="" class="img-fluid w-75" data-aos="fade-up-right">
+          </div>
+
+
+        </div>
+
+
+        <!-- Quote 2 : ขวา -->
+        <div class="row align-items-center g-5 mb-5">
+
+          <div class="col-md-6 text-center order-md-1 order-2">
+            <img src="images/ppl.png" alt="" class="img-fluid w-75" data-aos="fade-right">
+          </div>
+
+          <div class="col-md-6 position-relative text-center order-md-2 order-1">
+            <img src="images/paper2.png" alt="Quote 2" class="img-fluid" data-aos="fade-up-left">
+
+            <div class="position-absolute top-50 start-50 translate-middle w-75 text-dark text-center fs-4 quote-text"
+              data-aos="fade-up-left">
+              “นั่นแหละความฝัน<br>
+              ร้าวรานพอกันกับความรัก”
+            </div>
+          </div>
+
+        </div>
+
+
+       <!-- Quote 3 : ซ้าย -->
+<div class="row align-items-center g-5">
+
+  <!-- คอลัมน์ซ้าย : Quote -->
+  <div class="col-12 col-md-6 position-relative text-center">
+
+    <img src="images/paper3.png"
+         alt="Quote 3"
+         class="img-fluid"
+         data-aos="fade-up-right">
+
+    <div class="position-absolute top-50 start-50 translate-middle w-75 text-dark text-center fs-4 quote-text"
+         data-aos="fade-up-right">
+      “ความเหงาแม่งเงียบ...<br>
+      เงียบจนไม่รู้ว่าตัวว่า<br>
+      แม่งเหงาชิบหาย<br>
+      เงียบอย่างคาดไม่ได้ว่า<br>
+      การแผ่ซานของความเหงา<br>
+      กับการขยายตัวของเอกภาพ<br>
+      อะไรมันไพศาลกว่ากัน”
+    </div>
+
+  </div>
+
+  <!-- คอลัมน์ขวา : รูป p.png -->
+  <div class="col-12 col-md-6 text-center">
+    <img src="images/star.png"
+         alt="P"
+         class="img-fluid w-75"
+         data-aos="fade-up-left">
+  </div>
+
+</div>
+
+
+
+          <!-- พลิกบนเป็นล่างด้วย Bootstrap ไม่สามารถทำได้โดยตรง -->
+          <!-- ถ้าไฟล์ ppl.png เป็นรูปที่ต้องกลับหัว ให้ใช้รูปที่กลับหัวมาแทนตรงนี้ -->
+        </div>
+
+
+ 
+
+
+      </div>
+
+
+
+      </div>
+    </section>
+
+
+  </main>
+
+
+
+
+
+
+  
+
+
+
+
+  <!-- SECTION 5 : PLAYLIST -->
+  <section id="playlist" class="py-5 bg-dark">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+
+          <!-- Carousel รูปเพลง -->
+          <div id="playlistCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#playlistCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+
+              <button type="button" data-bs-target="#playlistCarousel" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+
+              <button type="button" data-bs-target="#playlistCarousel" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+
+              <button type="button" data-bs-target="#playlistCarousel" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+
+              <button type="button" data-bs-target="#playlistCarousel" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+
+              <button type="button" data-bs-target="#playlistCarousel" data-bs-slide-to="5"
+                aria-label="Slide 6"></button>
+
+              <button type="button" data-bs-target="#playlistCarousel" data-bs-slide-to="6"
+                aria-label="Slide 7"></button>
+
+
+            </div>
+
+            <!-- Carousel Images -->
+            <div class="carousel-inner rounded-4">
+
+              <!-- รูปที่ 1 -->
+              <div class="carousel-item active">
+                <img src="images/song.png" class="d-block w-100 img-fluid" alt="Playlist">
+              </div>
+
+              <!-- รูปที่ 2 -->
+              <div class="carousel-item">
+                <img src="images/s1.jpg" class="d-block w-75 mx-auto img-fluid" alt="Slide 2">
+              </div>
+
+              <!-- รูปที่ 3 -->
+              <div class="carousel-item">
+                <img src="images/s2.jpg" class="d-block w-75 mx-auto img-fluid" alt="Slide 3">
+              </div>
+
+              <!-- รูปที่ 4 -->
+              <div class="carousel-item">
+                <img src="images/s3.jpg" class="d-block w-75 mx-auto img-fluid" alt="Slide 4">
+              </div>
+
+              <!-- รูปที่ 5 -->
+              <div class="carousel-item">
+                <img src="images/s4.jpg" class="d-block w-75 mx-auto img-fluid" alt="Slide 5">
+              </div>
+
+              <!-- รูปที่ 6 -->
+              <div class="carousel-item">
+              <img src="images/s5.jpg"
+                 class="d-block w-75 mx-auto img-fluid"
+                alt="Slide 6">
+</div>
+
+<!-- รูปที่ 7 -->
+<div class="carousel-item">
+  <img src="images/s6.jpg"
+       class="d-block w-75 mx-auto img-fluid"
+       alt="Slide 7">
+</div>
+
+
+            </div>
+
+            <!-- Previous Button -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#playlistCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+
+            <!-- Next Button -->
+            <button class="carousel-control-next" type="button" data-bs-target="#playlistCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+
+          </div>
+
+          <!-- ชื่อเพลง -->
+          <div class="text-center mt-4">
+            <h2 class="fw-bold text-white">
+              เดนดาว NEVERDIE
+            </h2>
+
+            <p class="text-white-50 mb-4">
+              Playlist
+            </p>
+          </div>
+
+          <!-- Music Player -->
+          <div class="bg-white rounded-4 p-4 shadow">
+
+            <!-- Progress -->
+            <div class="progress mb-3" role="progressbar" aria-label="Music progress" aria-valuenow="35"
+              aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" style="width: 35%; background-color: #f70164;">
+              </div>
+            </div>
+
+            <!-- เวลา -->
+            <div class="d-flex justify-content-between small text-secondary mb-3">
+              <span>01:10</span>
+              <span>04:10</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="d-flex justify-content-center align-items-center gap-4">
+
+              <!-- Previous -->
+              <button type="button" class="btn btn-dark rounded-circle">
+                ⏮
+              </button>
+
+              <!-- Spotify -->
+              <a href="https://open.spotify.com/playlist/7efYZFQF39VXtD34fJZ1u2?si=bRKM9jitRdCNdFdXVM5Jqw&utm_source=copy-link&pi=XLyiMDWQQ5SsC"
+                target="_blank" rel="noopener noreferrer" class="btn rounded-circle text-white"
+                style="background-color: #f70164;">
+                ▶
+              </a>
+
+              <!-- Next -->
+              <button type="button" class="btn btn-dark rounded-circle">
+                ⏭
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+  
+
+  <!-- FOOTER -->
+<footer id="footer" class="py-5 text-center"
+
+  style="background-color: #000; color: #ffffff;">
+  <div class="container">
+
+    
+
+   <h1 class="fs-5 mb-4" style="color: #f70164;">
+  เรื่องบางเรื่อง อ่านจบแล้วก็ยังไม่จบในใจ
+   </h1>
+
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
+      <span class="x-logo fs-2">𝕏</span>
+      <a href="https://x.com/bookie.th"
+         class="text-white text-decoration-none fs-5">
+        @bookie.th
+      </a>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+      
+      <hr class="flex-grow-1"
+          style="max-width: 100px; border-color: #f70164; opacity: 1;">
+      
+    </div>
+
+    <p class="small mb-0">
+      A LITTLE CORNER FOR STORIES &amp; FEELINGS
+    </p>
+
+    <p class="small mt-3 mb-0 opacity-75">
+      © 2026 BOOKIE
+    </p>
+
+  </div>
+</footer>
+
+
+
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+
+</html>
