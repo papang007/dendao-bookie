@@ -9,18 +9,12 @@
   font-weight: 500;
   font-style: normal;
 }
-
-
-
-
  .playpen-sans {
   font-family: "Playpen Sans Thai", cursive;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
-
-
 
 .quote-text  {
   font-family: "Playpen Sans Thai", cursive;
@@ -52,3 +46,14 @@ p {
   font-weight: 400;
   font-style: normal;
 }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
